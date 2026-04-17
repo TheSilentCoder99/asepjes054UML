@@ -1,0 +1,178 @@
+{
+  "_type": "Project",
+  "_id": "AAAAAAFF+h6SjaM2Hec=",
+  "name": "Ejercicio2_Persona",
+  "ownedElements": [
+    {
+      "_type": "UMLModel",
+      "_id": "AAAAAAFF+qBWK6M3Z8Y=",
+      "_parent": { "$ref": "AAAAAAFF+h6SjaM2Hec=" },
+      "name": "Model",
+      "ownedElements": [
+        {
+          "_type": "UMLClass",
+          "_id": "cls_persona",
+          "_parent": { "$ref": "AAAAAAFF+qBWK6M3Z8Y=" },
+          "name": "Persona",
+          "attributes": [
+            {
+              "_type": "UMLAttribute",
+              "_id": "attr_p1",
+              "_parent": { "$ref": "cls_persona" },
+              "name": "nombre",
+              "type": "String",
+              "visibility": "private"
+            },
+            {
+              "_type": "UMLAttribute",
+              "_id": "attr_p2",
+              "_parent": { "$ref": "cls_persona" },
+              "name": "apellido1",
+              "type": "String",
+              "visibility": "private"
+            },
+            {
+              "_type": "UMLAttribute",
+              "_id": "attr_p3",
+              "_parent": { "$ref": "cls_persona" },
+              "name": "apellido2",
+              "type": "String",
+              "visibility": "private"
+            },
+            {
+              "_type": "UMLAttribute",
+              "_id": "attr_p4",
+              "_parent": { "$ref": "cls_persona" },
+              "name": "fechaNacimiento",
+              "type": "Date",
+              "visibility": "private"
+            },
+            {
+              "_type": "UMLAttribute",
+              "_id": "attr_p5",
+              "_parent": { "$ref": "cls_persona" },
+              "name": "sexo",
+              "type": "String",
+              "visibility": "private"
+            },
+            {
+              "_type": "UMLAttribute",
+              "_id": "attr_p6",
+              "_parent": { "$ref": "cls_persona" },
+              "name": "numeroIdentificacion",
+              "type": "String",
+              "visibility": "private"
+            }
+          ],
+          "operations": []
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "cls_puesto",
+          "_parent": { "$ref": "AAAAAAFF+qBWK6M3Z8Y=" },
+          "name": "PuestoTrabajo",
+          "attributes": [
+            {
+              "_type": "UMLAttribute",
+              "_id": "attr_pt1",
+              "_parent": { "$ref": "cls_puesto" },
+              "name": "nombre",
+              "type": "String",
+              "visibility": "private"
+            },
+            {
+              "_type": "UMLAttribute",
+              "_id": "attr_pt2",
+              "_parent": { "$ref": "cls_puesto" },
+              "name": "fechaInicio",
+              "type": "Date",
+              "visibility": "private"
+            },
+            {
+              "_type": "UMLAttribute",
+              "_id": "attr_pt3",
+              "_parent": { "$ref": "cls_puesto" },
+              "name": "fechaFin",
+              "type": "Date",
+              "visibility": "private"
+            },
+            {
+              "_type": "UMLAttribute",
+              "_id": "attr_pt4",
+              "_parent": { "$ref": "cls_puesto" },
+              "name": "salario",
+              "type": "double",
+              "visibility": "private"
+            }
+          ],
+          "operations": []
+        },
+        {
+          "_type": "UMLAssociation",
+          "_id": "assoc_persona_puesto",
+          "_parent": { "$ref": "AAAAAAFF+qBWK6M3Z8Y=" },
+          "name": "trabaja",
+          "end1": {
+            "_type": "UMLAssociationEnd",
+            "_id": "assoc_end1",
+            "_parent": { "$ref": "assoc_persona_puesto" },
+            "reference": { "$ref": "cls_persona" },
+            "name": "persona",
+            "navigable": false,
+            "multiplicity": "1"
+          },
+          "end2": {
+            "_type": "UMLAssociationEnd",
+            "_id": "assoc_end2",
+            "_parent": { "$ref": "assoc_persona_puesto" },
+            "reference": { "$ref": "cls_puesto" },
+            "name": "puestos",
+            "navigable": true,
+            "multiplicity": "0..*"
+          }
+        },
+        {
+          "_type": "UMLClassDiagram",
+          "_id": "diag_persona",
+          "_parent": { "$ref": "AAAAAAFF+qBWK6M3Z8Y=" },
+          "name": "DiagramaPersona",
+          "defaultDiagram": true,
+          "ownedViews": [
+            {
+              "_type": "UMLClassView",
+              "_id": "view_persona",
+              "_parent": { "$ref": "diag_persona" },
+              "model": { "$ref": "cls_persona" },
+              "left": 60,
+              "top": 150,
+              "width": 220,
+              "height": 170,
+              "suppressAttributes": false,
+              "suppressOperations": false
+            },
+            {
+              "_type": "UMLClassView",
+              "_id": "view_puesto",
+              "_parent": { "$ref": "diag_persona" },
+              "model": { "$ref": "cls_puesto" },
+              "left": 400,
+              "top": 150,
+              "width": 220,
+              "height": 130,
+              "suppressAttributes": false,
+              "suppressOperations": false
+            },
+            {
+              "_type": "UMLAssociationView",
+              "_id": "view_assoc",
+              "_parent": { "$ref": "diag_persona" },
+              "model": { "$ref": "assoc_persona_puesto" },
+              "end1": { "$ref": "view_persona" },
+              "end2": { "$ref": "view_puesto" }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
